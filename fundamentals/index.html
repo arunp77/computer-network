@@ -1701,11 +1701,13 @@
 <h3 id="what-is-a-computer-network">What is a computer network?<a class="headerlink" href="#what-is-a-computer-network" title="Permanent link">&para;</a></h3>
 <p>A computer network is simply a group of two or more interconnected computing devices that can share data and resources. Think of it like a conversation between two people; to communicate, they need a shared language, a medium (like air for sound), and a set of rules for taking turns speaking. In networking, computers use cables or wireless signals (medium) and protocols (rules) to share information.</p>
 <h3 id="network-types-based-on-scope">Network Types (Based on Scope)<a class="headerlink" href="#network-types-based-on-scope" title="Permanent link">&para;</a></h3>
-<p>Networks are categorized by their physical size and geographic reach:
-* <strong>PAN (Personal Area Network):</strong> Covers a very small area, usually within a few meters of a person. Example: Connecting Bluetooth headphones to a smartphone.
-* <strong>LAN (Local Area Network):</strong> Covers a single room, building, or campus. Example: Your home Wi-Fi network or an office network. LANs are typically fast and privately owned.
-* <strong>MAN (Metropolitan Area Network):</strong> Covers a city or a large campus. Example: A city-wide public Wi-Fi network.
-* <strong>WAN (Wide Area Network):</strong> Spans large geographical distances, connecting multiple LANs together. Example: The Internet itself is the largest WAN.</p>
+<p>Networks are categorized by their physical size and geographic reach:</p>
+<ul>
+<li><strong>PAN (Personal Area Network):</strong> Covers a very small area, usually within a few meters of a person. Example: Connecting Bluetooth headphones to a smartphone.</li>
+<li><strong>LAN (Local Area Network):</strong> Covers a single room, building, or campus. Example: Your home Wi-Fi network or an office network. LANs are typically fast and privately owned.</li>
+<li><strong>MAN (Metropolitan Area Network):</strong> Covers a city or a large campus. Example: A city-wide public Wi-Fi network.</li>
+<li><strong>WAN (Wide Area Network):</strong> Spans large geographical distances, connecting multiple LANs together. Example: The Internet itself is the largest WAN.</li>
+</ul>
 <h3 id="client-server-vs-peer-to-peer-architecture">Client-Server vs. Peer-to-Peer Architecture<a class="headerlink" href="#client-server-vs-peer-to-peer-architecture" title="Permanent link">&para;</a></h3>
 <p>How do devices communicate on these networks? There are two primary models:</p>
 <ol>
@@ -1715,7 +1717,7 @@
 </ol>
 <p><strong>Analogy:</strong> Ordering food at a restaurant. You are the client requesting food; the kitchen is the server fulfilling the request.
 2. <strong>Peer-to-Peer (P2P) Architecture:</strong>
-   * Every device on the network is equal (a "peer"). They can both request and provide resources. </p>
+   - Every device on the network is equal (a "peer"). They can both request and provide resources. </p>
 <p><strong>Example:</strong> BitTorrent networks or sharing a folder directly between two laptops on the same Wi-Fi.</p>
 <h3 id="network-topologies">Network Topologies<a class="headerlink" href="#network-topologies" title="Permanent link">&para;</a></h3>
 <p>Topology refers to the physical or logical layout of a network.</p>
@@ -1735,8 +1737,8 @@
 <h3 id="network-protocols-encapsulation-and-decapsulation">Network Protocols, Encapsulation, and Decapsulation<a class="headerlink" href="#network-protocols-encapsulation-and-decapsulation" title="Permanent link">&para;</a></h3>
 <p>A <strong>protocol</strong> is a standard set of rules that allow electronic devices to communicate. </p>
 <p>When you send data, it doesn't just fly through the wire raw. It goes through <strong>Encapsulation</strong>:
-* Data is wrapped in "envelopes" (headers and trailers) at different layers of the network before transmission. 
-* Think of sending a physical letter: You write the letter (data), put it in an envelope, write the recipient's address (IP address), put a stamp on it, and give it to the post office.</p>
+- Data is wrapped in "envelopes" (headers and trailers) at different layers of the network before transmission. 
+- Think of sending a physical letter: You write the letter (data), put it in an envelope, write the recipient's address (IP address), put a stamp on it, and give it to the post office.</p>
 <p>When the receiving computer gets the data, it performs <strong>Decapsulation</strong>, stripping away the envelopes layer by layer until the original data is revealed.</p>
 <blockquote>
 <p><strong>Module 1 Key Takeaways:</strong> Networks connect devices to share resources. Understanding the physical layout (topology), the communication model (client-server), and performance metrics (bandwidth, latency) is the foundation of network engineering.</p>
@@ -1838,8 +1840,8 @@
 </li>
 </ul>
 <h3 id="nat-and-pat">NAT and PAT<a class="headerlink" href="#nat-and-pat" title="Permanent link">&para;</a></h3>
-<p>If private IPs aren't routable on the internet, how do devices in your house access Google? 
-<strong>NAT (Network Address Translation)</strong>. Your home router takes the internal private IP address of your laptop and translates it to the single public IP address assigned to your house by your ISP before sending the packet to the Internet. PAT (Port Address Translation) allows multiple devices to share that single public IP by using different port numbers.</p>
+<p>If private IPs aren't routable on the internet, how do devices in your house access Google? </p>
+<p><strong>NAT (Network Address Translation)</strong>. Your home router takes the internal private IP address of your laptop and translates it to the single public IP address assigned to your house by your ISP before sending the packet to the Internet. PAT (Port Address Translation) allows multiple devices to share that single public IP by using different port numbers.</p>
 <h3 id="dhcp-dynamic-host-configuration-protocol">DHCP (Dynamic Host Configuration Protocol)<a class="headerlink" href="#dhcp-dynamic-host-configuration-protocol" title="Permanent link">&para;</a></h3>
 <p>Assigning IP addresses manually to every device is tedious. DHCP is a protocol that automatically assigns IP addresses, subnet masks, default gateways, and DNS servers to devices when they join a network.</p>
 <h3 id="subnetting-and-cidr-notation">Subnetting and CIDR Notation<a class="headerlink" href="#subnetting-and-cidr-notation" title="Permanent link">&para;</a></h3>
@@ -1849,10 +1851,10 @@
 Instead of writing a subnet mask as <code>255.255.255.0</code>, we use CIDR notation: <code>/24</code>. This means the first 24 bits of the IP address belong to the network, and the remaining 8 bits belong to the hosts.</p>
 <p><strong>Practical Subnetting Example:</strong>
 Given the network <code>192.168.1.0/24</code>:
-* <strong>Network Address:</strong> <code>192.168.1.0</code> (The name of the network, cannot be assigned to a device).
-* <strong>Usable Host Range:</strong> <code>192.168.1.1</code> to <code>192.168.1.254</code> (IPs you can give to laptops, servers, etc.).
-* <strong>Broadcast Address:</strong> <code>192.168.1.255</code> (Used to send a message to ALL devices on this subnet).
-* <strong>Total IPs:</strong> 256. <strong>Usable IPs:</strong> 254 (Total - 2).</p>
+- <strong>Network Address:</strong> <code>192.168.1.0</code> (The name of the network, cannot be assigned to a device).
+- <strong>Usable Host Range:</strong> <code>192.168.1.1</code> to <code>192.168.1.254</code> (IPs you can give to laptops, servers, etc.).
+- <strong>Broadcast Address:</strong> <code>192.168.1.255</code> (Used to send a message to ALL devices on this subnet).
+- <strong>Total IPs:</strong> 256. <strong>Usable IPs:</strong> 254 (Total - 2).</p>
 <blockquote>
 <p><strong>Module 3 Key Takeaways:</strong> Subnetting is the mathematical foundation of cloud networking. You must understand CIDR notation to design VPCs and subnets in AWS, Azure, or GCP.</p>
 </blockquote>
