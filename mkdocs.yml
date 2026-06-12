@@ -1,0 +1,58 @@
+site_name: Computer Network Engineering
+site_description: Complete Guide to Networking, Data Centers and Cloud Infrastructure
+site_author: Arun Kumar Pandey
+
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.highlight
+    - search.suggest
+    - content.code.copy
+
+  palette:
+    - scheme: default
+      primary: blue
+      accent: indigo
+
+    - scheme: slate
+      primary: blue
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: Dark Mode
+
+nav:
+  - Home: index.md
+
+  - Fundamentals:
+      - Networking Basics: fundamentals.md
+
+  - Routing & Security:
+      - Routing and Security: routing-security.md
+
+  - Data Center:
+      - Data Center & Containers: datacenter-containers.md
+
+  - Cloud:
+      - Cloud Native Infrastructure: cloud-native.md
+
+  - Data Engineering:
+      - Data Platforms & Observability: data-observability.md
+
+  - Interview Preparation:
+      - Interview Questions: interview-questions.md
+
+  - Labs:
+      - Labs & Glossary: labs-tools-glossary.md
+
+markdown_extensions:
+  - admonition
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences

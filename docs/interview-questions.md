@@ -1,10 +1,10 @@
-# Appendix A: Interview Questions
+# Appendix A: Important Questions
 
-This appendix contains a curated list of high-yield interview questions for Networking, Cloud Networking, and Data Center roles. *(Note: Due to length constraints, this is a highly condensed version of the top 50 most critical questions out of the 170 requested, focusing on the core concepts asked in top tech companies).*
+This appendix contains a curated list of high-yield important questions for Networking, Cloud Networking, and Data Center roles. *(Note: Due to length constraints, this is a highly condensed version of the top 50 most critical questions out of the 170 requested, focusing on the core concepts asked in top tech companies).*
 
 ---
 
-## Part 1: Top Networking Interview Questions
+## Part 1: Top Networking important Questions
 
 1. **What is the difference between the OSI and TCP/IP models?**
    *Answer:* OSI is a 7-layer theoretical model used for teaching and troubleshooting. TCP/IP is a 4-layer practical model upon which the Internet is actually built.
@@ -55,7 +55,7 @@ This appendix contains a curated list of high-yield interview questions for Netw
 
 ---
 
-## Part 2: Top Cloud Networking Interview Questions
+## Part 2: Top Cloud Networking important Questions
 
 16. **What is a VPC (Virtual Private Cloud)?**
     *Answer:* A logically isolated virtual network within a public cloud provider where you launch your cloud resources.
@@ -89,7 +89,7 @@ This appendix contains a curated list of high-yield interview questions for Netw
 
 ---
 
-## Part 3: Top Data Center Networking Interview Questions
+## Part 3: Top Data Center Networking important Questions
 
 26. **What is the difference between a 3-Tier Architecture and a Spine-Leaf Architecture?**
     *Answer:* 3-Tier is hierarchical (Core/Aggregation/Access) and optimized for North-South traffic. Spine-Leaf is a modern, flat architecture optimized for heavy East-West (server-to-server) traffic.
