@@ -1,0 +1,1663 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Complete Guide to Networking, Data Centers and Cloud Infrastructure">
+      
+      
+        <meta name="author" content="Arun Kumar Pandey">
+      
+      
+      
+        <link rel="prev" href="../datacenter-containers/">
+      
+      
+        <link rel="next" href="../data-observability/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Cloud Native Infrastructure - Computer Network Engineering</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#part-4-cloud-cloud-native" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Computer Network Engineering" class="md-header__button md-logo" aria-label="Computer Network Engineering" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Computer Network Engineering
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Cloud Native Infrastructure
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="indigo"  aria-label="Dark Mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Dark Mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../fundamentals/" class="md-tabs__link">
+          
+  
+  
+  Fundamentals
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../routing-security/" class="md-tabs__link">
+          
+  
+  
+  Routing & Security
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../datacenter-containers/" class="md-tabs__link">
+          
+  
+  
+  Data Center
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+  Cloud
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../data-observability/" class="md-tabs__link">
+          
+  
+  
+  Data Engineering
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../interview-questions/" class="md-tabs__link">
+          
+  
+  
+  Interview Preparation
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../labs-tools-glossary/" class="md-tabs__link">
+          
+  
+  
+  Labs
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Computer Network Engineering" class="md-nav__button md-logo" aria-label="Computer Network Engineering" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Computer Network Engineering
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Fundamentals
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fundamentals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Networking Basics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Routing & Security
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Routing & Security
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../routing-security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Routing and Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Center
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Data Center
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../datacenter-containers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Center & Containers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cloud
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Cloud
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cloud Native Infrastructure
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cloud Native Infrastructure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#module-12-cloud-computing-fundamentals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MODULE 12: CLOUD COMPUTING FUNDAMENTALS
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="MODULE 12: CLOUD COMPUTING FUNDAMENTALS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-cloud-service-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Cloud Service Models
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cloud-deployment-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cloud Deployment Models
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shared-responsibility-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Shared Responsibility Model
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#module-13-cloud-networking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MODULE 13: CLOUD NETWORKING
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="MODULE 13: CLOUD NETWORKING">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vpc-virtual-private-cloud" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VPC (Virtual Private Cloud)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subnets-public-vs-private" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Subnets: Public vs. Private
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cloud-networking-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cloud Networking Components
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cloud-security-firewalls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cloud Security Firewalls
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connecting-networks-together" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Connecting Networks Together
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#module-14-cloud-native-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MODULE 14: CLOUD-NATIVE ARCHITECTURE
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="MODULE 14: CLOUD-NATIVE ARCHITECTURE">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#monolith-vs-microservices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Monolith vs. Microservices
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-networking-challenges-of-microservices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Networking Challenges of Microservices
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#solutions-api-gateway-and-service-mesh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Solutions: API Gateway and Service Mesh
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#serverless-computing-and-event-driven-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Serverless Computing and Event-Driven Architecture
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Engineering
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Data Engineering
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data-observability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Platforms & Observability
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Interview Preparation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Interview Preparation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interview-questions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Interview Questions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Labs
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Labs
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../labs-tools-glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Labs & Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#module-12-cloud-computing-fundamentals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MODULE 12: CLOUD COMPUTING FUNDAMENTALS
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="MODULE 12: CLOUD COMPUTING FUNDAMENTALS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-cloud-service-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Cloud Service Models
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cloud-deployment-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cloud Deployment Models
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shared-responsibility-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Shared Responsibility Model
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#module-13-cloud-networking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MODULE 13: CLOUD NETWORKING
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="MODULE 13: CLOUD NETWORKING">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vpc-virtual-private-cloud" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VPC (Virtual Private Cloud)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subnets-public-vs-private" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Subnets: Public vs. Private
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cloud-networking-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cloud Networking Components
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cloud-security-firewalls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cloud Security Firewalls
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connecting-networks-together" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Connecting Networks Together
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#module-14-cloud-native-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MODULE 14: CLOUD-NATIVE ARCHITECTURE
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="MODULE 14: CLOUD-NATIVE ARCHITECTURE">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#monolith-vs-microservices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Monolith vs. Microservices
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-networking-challenges-of-microservices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Networking Challenges of Microservices
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#solutions-api-gateway-and-service-mesh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Solutions: API Gateway and Service Mesh
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#serverless-computing-and-event-driven-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Serverless Computing and Event-Driven Architecture
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="part-4-cloud-cloud-native">Part 4: Cloud &amp; Cloud-Native<a class="headerlink" href="#part-4-cloud-cloud-native" title="Permanent link">&para;</a></h1>
+<p>This section covers how to architect networks in public clouds (AWS, Azure, GCP) and how modern cloud-native applications are structured.</p>
+<hr />
+<h2 id="module-12-cloud-computing-fundamentals">MODULE 12: CLOUD COMPUTING FUNDAMENTALS<a class="headerlink" href="#module-12-cloud-computing-fundamentals" title="Permanent link">&para;</a></h2>
+<p>Cloud computing is the on-demand delivery of IT resources over the Internet with pay-as-you-go pricing. Instead of buying physical servers, you rent compute power, storage, and databases from a cloud provider.</p>
+<h3 id="the-cloud-service-models">The Cloud Service Models<a class="headerlink" href="#the-cloud-service-models" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>IaaS (Infrastructure as a Service):</strong> You rent the basic building blocks—virtual servers (VMs), storage, and networking. You manage the OS and everything on top. (e.g., AWS EC2).</li>
+<li><strong>PaaS (Platform as a Service):</strong> You provide the code; the cloud provider manages the underlying infrastructure, OS, and runtime. (e.g., AWS Elastic Beanstalk, Heroku).</li>
+<li><strong>SaaS (Software as a Service):</strong> A complete, hosted application used by end-users. (e.g., Gmail, Salesforce).</li>
+</ul>
+<h3 id="cloud-deployment-models">Cloud Deployment Models<a class="headerlink" href="#cloud-deployment-models" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Public Cloud:</strong> Infrastructure owned and operated by third-party providers (AWS, Azure, GCP) and delivered over the internet.</li>
+<li><strong>Private Cloud:</strong> Cloud infrastructure used exclusively by a single organization (often hosted in their own on-premise Data Center using tools like OpenStack).</li>
+<li><strong>Hybrid Cloud:</strong> Connecting a Private Cloud (or traditional Data Center) to a Public Cloud securely via a VPN or dedicated connection.</li>
+<li><strong>Multi-Cloud:</strong> Using multiple public cloud providers simultaneously (e.g., using AWS for compute and GCP for machine learning).</li>
+</ul>
+<h3 id="shared-responsibility-model">Shared Responsibility Model<a class="headerlink" href="#shared-responsibility-model" title="Permanent link">&para;</a></h3>
+<p>Security in the cloud is shared.
+* <strong>Security <em>OF</em> the Cloud (Provider):</strong> The cloud provider is responsible for physically securing the data centers, the hardware, and the hypervisor layer.
+* <strong>Security <em>IN</em> the Cloud (Customer):</strong> You are responsible for securing your OS, application code, data, and <em>network firewall configurations</em>.</p>
+<blockquote>
+<p><strong>Module 12 Key Takeaways:</strong> Cloud computing shifts CapEx (buying hardware) to OpEx (renting). Remember the Shared Responsibility model: if you leave a database open to the public internet, it is your fault, not Amazon's.</p>
+</blockquote>
+<hr />
+<h2 id="module-13-cloud-networking">MODULE 13: CLOUD NETWORKING<a class="headerlink" href="#module-13-cloud-networking" title="Permanent link">&para;</a></h2>
+<p>Cloud Networking applies traditional networking concepts (subnets, routing, firewalls) into a software-defined, virtualized cloud environment.</p>
+<h3 id="vpc-virtual-private-cloud">VPC (Virtual Private Cloud)<a class="headerlink" href="#vpc-virtual-private-cloud" title="Permanent link">&para;</a></h3>
+<p>A VPC is your own logically isolated slice of the public cloud. It is a virtual network dedicated to your cloud account. (Equivalent: AWS VPC, Azure Virtual Network (VNet), Google Cloud VPC).</p>
+<h3 id="subnets-public-vs-private">Subnets: Public vs. Private<a class="headerlink" href="#subnets-public-vs-private" title="Permanent link">&para;</a></h3>
+<p>When you create a VPC (e.g., <code>10.0.0.0/16</code>), you divide it into subnets.
+* <strong>Public Subnet:</strong> Has a direct route to the Internet. Used for Load Balancers and Bastion Hosts (Jump servers).
+* <strong>Private Subnet:</strong> Has NO direct route to the Internet. Used for Application Servers, Databases, and backend systems. This is a critical security boundary.</p>
+<h3 id="cloud-networking-components">Cloud Networking Components<a class="headerlink" href="#cloud-networking-components" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Internet Gateway (IGW):</strong> A horizontally scaled, highly available cloud router that connects your VPC to the public internet.</li>
+<li><strong>NAT Gateway:</strong> Sits in the Public Subnet. Allows instances in the <em>Private Subnet</em> to initiate outbound connections to the internet (e.g., to download software updates) but prevents the internet from initiating connections back to them.</li>
+<li><strong>Route Tables:</strong> Every subnet is associated with a route table, which contains rules dictating where network traffic is directed.</li>
+</ul>
+<h3 id="cloud-security-firewalls">Cloud Security Firewalls<a class="headerlink" href="#cloud-security-firewalls" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Security Groups (SGs):</strong> Act as a virtual firewall for your <em>instances</em> (VMs). They are <strong>stateful</strong>. You assign an SG to an EC2 instance to say "Only allow port 80 from the Load Balancer."</li>
+<li><strong>Network ACLs (NACLs):</strong> Act as a virtual firewall for your <em>subnets</em>. They are <strong>stateless</strong>. They act as an additional layer of defense around the perimeter of the subnet.</li>
+</ul>
+<h3 id="connecting-networks-together">Connecting Networks Together<a class="headerlink" href="#connecting-networks-together" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>VPC Peering:</strong> A direct, 1-to-1 network connection between two VPCs. (If VPC A peers with VPC B, and B peers with C, A <em>cannot</em> talk to C automatically. It is not transitive).</li>
+<li><strong>Transit Gateway (TGW):</strong> A central cloud router that connects thousands of VPCs and on-premise networks together. It solves the headache of managing hundreds of 1-to-1 peering connections using a hub-and-spoke model.</li>
+</ul>
+<div class="highlight"><pre><span></span><code>graph TD
+    subgraph Transit Gateway Hub
+    TGW((Transit Gateway))
+    end
+
+    TGW --- VPC_A
+    TGW --- VPC_B
+    TGW --- VPC_C
+    TGW --- VPN[Site-to-Site VPN]
+    VPN --- OnPrem[On-Premise Data Center]
+</code></pre></div>
+<blockquote>
+<p><strong>Module 13 Key Takeaways:</strong> The golden rule of Cloud Networking architecture is putting internet-facing resources in Public Subnets and backend resources/databases in Private Subnets, using a NAT Gateway for outbound access.</p>
+</blockquote>
+<hr />
+<h2 id="module-14-cloud-native-architecture">MODULE 14: CLOUD-NATIVE ARCHITECTURE<a class="headerlink" href="#module-14-cloud-native-architecture" title="Permanent link">&para;</a></h2>
+<p>"Cloud-Native" doesn't just mean running in the cloud; it means designing applications specifically to take advantage of cloud elasticity and distributed computing.</p>
+<h3 id="monolith-vs-microservices">Monolith vs. Microservices<a class="headerlink" href="#monolith-vs-microservices" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Monolith:</strong> All application logic (UI, business rules, database access) is compiled into a single massive program. Hard to scale, hard to update.</li>
+<li><strong>Microservices:</strong> Breaking the application down into small, independent, loosely-coupled services that communicate over the network (usually via HTTP APIs or gRPC).</li>
+</ul>
+<h3 id="the-networking-challenges-of-microservices">The Networking Challenges of Microservices<a class="headerlink" href="#the-networking-challenges-of-microservices" title="Permanent link">&para;</a></h3>
+<p>When an app is split into 50 microservices, the network becomes the most critical component.
+1. <strong>Service Discovery:</strong> How does Service A find the IP address of Service B when Service B is running in ephemeral containers?
+2. <strong>Resilience:</strong> What happens if the network drops a packet between Service A and B?
+3. <strong>Security:</strong> How do we encrypt traffic between services?</p>
+<h3 id="solutions-api-gateway-and-service-mesh">Solutions: API Gateway and Service Mesh<a class="headerlink" href="#solutions-api-gateway-and-service-mesh" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>API Gateway:</strong> The front door. It handles all North-South traffic (user to cluster). It handles authentication, rate limiting, and routes the user's request to the correct microservice.</li>
+<li><strong>Service Mesh (e.g., Istio, Linkerd):</strong> Handles East-West traffic (microservice to microservice). It injects a tiny proxy container (a "sidecar") next to every application container. The proxies handle all network traffic, providing automatic TLS encryption, retries, and traffic metrics without the developer having to write any networking code.</li>
+</ul>
+<h3 id="serverless-computing-and-event-driven-architecture">Serverless Computing and Event-Driven Architecture<a class="headerlink" href="#serverless-computing-and-event-driven-architecture" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Serverless (e.g., AWS Lambda):</strong> You don't manage VMs or containers. You just write code, and the cloud provider runs it only when triggered by an event. You pay per millisecond of execution time.</li>
+<li><strong>Event-Driven Architecture:</strong> Services communicate asynchronously by publishing and subscribing to events (using message brokers like Kafka, RabbitMQ, or AWS SNS/SQS). This decouples services completely.</li>
+</ul>
+<blockquote>
+<p><strong>Module 14 Key Takeaways:</strong> Cloud-Native relies on microservices and containers. As you split applications apart, the network complexity skyrockets, requiring advanced tools like Service Meshes and API Gateways to manage the chaos securely.</p>
+</blockquote>
+<hr />
+<p><a href="./module-15-to-17-data-observability.md">Proceed to Part 5: Data Infrastructure &amp; Observability</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "search.suggest", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
