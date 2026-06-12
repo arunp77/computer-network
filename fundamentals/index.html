@@ -723,6 +723,34 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Public vs. Private IP Addresses">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-public-ips" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Public IPs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-private-ips" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Private IPs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -1576,6 +1604,34 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Public vs. Private IP Addresses">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-public-ips" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Public IPs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-private-ips" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Private IPs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -1854,32 +1910,26 @@
 </ul>
 <h3 id="public-vs-private-ip-addresses">Public vs. Private IP Addresses<a class="headerlink" href="#public-vs-private-ip-addresses" title="Permanent link">&para;</a></h3>
 <p>IP addresses uniquely identify devices on a network, enabling reliable communication, traffic routing, and data delivery. Based on their routing scope and accessibility, IP addresses are broadly classified into two types:</p>
+<h4 id="1-public-ips">1. Public IPs<a class="headerlink" href="#1-public-ips" title="Permanent link">&para;</a></h4>
+<p>A Public IP Address is an IP address used to communicate outside a local network over the internet.</p>
 <ul>
-<li>
-<p><strong>Public IPs:</strong> A Public IP Address is an IP address used to communicate outside a local network over the internet.</p>
-</li>
-<li>
-<p>These addresses are assigned by Internet Service Providers (ISPs) and must be globally unique.</p>
-</li>
-<li>
-<p>They enable direct access from anywhere on the internet, making them suitable for servers, websites, and other publicly accessible services.</p>
-</li>
-<li>
-<p><strong>Private IPs:</strong> A Private IP Address is used for communication within a local network (LAN). It enables devices such as computers, smartphones, and printers to exchange data internally.</p>
-</li>
-<li>
-<p>These addresses are typically assigned by a router or DHCP server, ensuring that each device on the network has a unique local identifier.</p>
-</li>
+<li>These addresses are assigned by Internet Service Providers (ISPs) and must be globally unique.</li>
+<li>They enable direct access from anywhere on the internet, making them suitable for servers, websites, and other publicly accessible services.</li>
+</ul>
+<h4 id="2-private-ips">2. Private IPs<a class="headerlink" href="#2-private-ips" title="Permanent link">&para;</a></h4>
+<p>A Private IP Address is used for communication within a local network (LAN). It enables devices such as computers, smartphones, and printers to exchange data internally.</p>
+<ul>
+<li>These addresses are typically assigned by a router or DHCP server, ensuring that each device on the network has a unique local identifier.</li>
 <li>Private IP addresses are not routable on the public internet, meaning they cannot be accessed directly from outside the local network.</li>
 <li>While this provides network isolation, private IP addresses are not inherently secure.</li>
 <li>Security depends on firewalls, NAT, and proper network configuration</li>
 </ul>
 <p><img alt="img" src="../assets/images/img10.png" /></p>
 <p>Not routable on the Internet. Used inside local networks (LANs). 
-   * Private IP Ranges:
-      - <code>10.0.0.0</code> to <code>10.255.255.255</code>
-      - <code>172.16.0.0</code> to <code>172.31.255.255</code>
-      - <code>192.168.0.0</code> to <code>192.168.255.255</code></p>
+* Private IP Ranges:
+   - <code>10.0.0.0</code> to <code>10.255.255.255</code>
+   - <code>172.16.0.0</code> to <code>172.31.255.255</code>
+   - <code>192.168.0.0</code> to <code>192.168.255.255</code></p>
 <h3 id="nat-and-pat">NAT and PAT<a class="headerlink" href="#nat-and-pat" title="Permanent link">&para;</a></h3>
 <p>If private IPs aren't routable on the internet, how do devices in your house access Google? </p>
 <p><strong>NAT (Network Address Translation)</strong>. Your home router takes the internal private IP address of your laptop and translates it to the single public IP address assigned to your house by your ISP before sending the packet to the Internet. PAT (Port Address Translation) allows multiple devices to share that single public IP by using different port numbers.</p>
