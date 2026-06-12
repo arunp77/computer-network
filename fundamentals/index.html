@@ -1736,9 +1736,11 @@
 - <strong>Jitter:</strong> The <em>variation</em> in latency. If some data packets arrive in 20ms, others in 50ms, and others in 10ms, you have high jitter. This is terrible for real-time voice and video calls.</p>
 <h3 id="network-protocols-encapsulation-and-decapsulation">Network Protocols, Encapsulation, and Decapsulation<a class="headerlink" href="#network-protocols-encapsulation-and-decapsulation" title="Permanent link">&para;</a></h3>
 <p>A <strong>protocol</strong> is a standard set of rules that allow electronic devices to communicate. </p>
-<p>When you send data, it doesn't just fly through the wire raw. It goes through <strong>Encapsulation</strong>:
-- Data is wrapped in "envelopes" (headers and trailers) at different layers of the network before transmission. 
-- Think of sending a physical letter: You write the letter (data), put it in an envelope, write the recipient's address (IP address), put a stamp on it, and give it to the post office.</p>
+<p>When you send data, it doesn't just fly through the wire raw. It goes through <strong>Encapsulation</strong>:</p>
+<ul>
+<li>Data is wrapped in "envelopes" (headers and trailers) at different layers of the network before transmission. </li>
+<li>Think of sending a physical letter: You write the letter (data), put it in an envelope, write the recipient's address (IP address), put a stamp on it, and give it to the post office.</li>
+</ul>
 <p>When the receiving computer gets the data, it performs <strong>Decapsulation</strong>, stripping away the envelopes layer by layer until the original data is revealed.</p>
 <blockquote>
 <p><strong>Module 1 Key Takeaways:</strong> Networks connect devices to share resources. Understanding the physical layout (topology), the communication model (client-server), and performance metrics (bandwidth, latency) is the foundation of network engineering.</p>
