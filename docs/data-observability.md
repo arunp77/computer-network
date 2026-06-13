@@ -103,4 +103,4 @@ Meanwhile, backend systems react to the Kafka event:
 > **Final Conclusion:** You have successfully traced a packet from a physical keyboard through the global internet, into a cloud VPC, down into a virtualized container network, through an event-streaming platform, and into a data warehouse. You now understand the full stack of modern Cloud Networking!
 
 ---
-[Proceed to Appendices: Interview Questions](./interview-questions.md)
+[Proceed to Appendices: Interview Questions](interview-questions.md)

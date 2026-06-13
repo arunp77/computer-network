@@ -2,6 +2,9 @@
 
 Welcome to the **Comprehensive Beginner-to-Advanced Tutorial on Computer Networking, Data Center Networking, Cloud Networking, and Cloud-Native Infrastructure**.
 
+![alt img](docs/assets/images/img0.png)
+
+
 This tutorial is designed as a complete training course suitable for IT professionals, Data Engineers, DevOps Engineers, Cloud Engineers, Software Engineers, and Computer Science students. It progresses logically from the absolute basics of how computers talk to each other to complex cloud-native architectures and observability patterns.
 
 ## Course Objectives

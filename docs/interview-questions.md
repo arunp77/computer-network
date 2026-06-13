@@ -107,4 +107,4 @@ This appendix contains a curated list of high-yield important questions for Netw
     *Answer:* A protocol used to bundle several physical network links into a single logical link to increase bandwidth and provide redundancy.
 
 ---
-[Proceed to Appendices: Labs, Tools & Glossary](./labs-tools-glossary.md)
+[Proceed to Appendices: Labs, Tools & Glossary](labs-tools-glossary.md)

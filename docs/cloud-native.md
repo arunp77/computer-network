@@ -95,4 +95,4 @@ When an app is split into 50 microservices, the network becomes the most critica
 > **Module 14 Key Takeaways:** Cloud-Native relies on microservices and containers. As you split applications apart, the network complexity skyrockets, requiring advanced tools like Service Meshes and API Gateways to manage the chaos securely.
 
 ---
-[Proceed to Part 5: Data Infrastructure & Observability](./module-15-to-17-data-observability.md)
+[Proceed to Part 5: Data Infrastructure & Observability](data-observability.md)

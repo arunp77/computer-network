@@ -150,4 +150,4 @@ By default, all Pods in K8s can talk to all other Pods (Zero Trust is violated!)
 > **Module 11 Key Takeaways:** Kubernetes networking is complex. Pods get IPs via CNI. Services provide stable internal load balancing for ephemeral Pods. Ingress handles HTTP routing from the outside world.
 
 ---
-[Proceed to Part 4: Cloud & Cloud-Native](./module-12-to-14-cloud-native.md)
+[Proceed to Part 4: Cloud & Cloud-Native](cloud-native.md)

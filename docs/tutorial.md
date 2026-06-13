@@ -10,14 +10,13 @@ This tutorial is designed as a complete training course suitable for IT professi
 ## Course Objectives
 
 By the end of this course, you will be able to:
-
-* Understand core networking fundamentals, including the OSI model, IP addressing, and subnetting.
-* Configure and troubleshoot basic routing, switching, and network security.
-* Design and comprehend Data Center network architectures (e.g., Spine-Leaf).
-* Understand virtualization, containers, and Kubernetes networking (CNI, Pods, Services).
-* Architect robust Cloud Networking environments in AWS, Azure, or GCP.
-* Design networks for data engineering platforms and distributed microservices.
-* Follow the complete end-to-end flow of a web request across modern infrastructure.
+- Understand core networking fundamentals, including the OSI model, IP addressing, and subnetting.
+- Configure and troubleshoot basic routing, switching, and network security.
+- Design and comprehend Data Center network architectures (e.g., Spine-Leaf).
+- Understand virtualization, containers, and Kubernetes networking (CNI, Pods, Services).
+- Architect robust Cloud Networking environments in AWS, Azure, or GCP.
+- Design networks for data engineering platforms and distributed microservices.
+- Follow the complete end-to-end flow of a web request across modern infrastructure.
 
 ## Table of Contents
 

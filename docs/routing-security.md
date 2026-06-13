@@ -119,4 +119,4 @@ IAM ensures the right people have the right access to the right resources. It in
 > **Module 7 Key Takeaways:** Security is layered (Defense in Depth). Firewalls protect boundaries, TLS encrypts data in transit, IAM verifies users, and Zero Trust ensures no implicit trust is granted anywhere.
 
 ---
-[Proceed to Part 3: Data Centers & Virtualization](./module-08-to-11-datacenter-containers.md)
+[Proceed to Part 3: Data Centers & Virtualization](datacenter-containers.md)
