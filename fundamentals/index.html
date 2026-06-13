@@ -1946,11 +1946,13 @@
 <p><strong>CIDR (Classless Inter-Domain Routing) Notation:</strong>
 Instead of writing a subnet mask as <code>255.255.255.0</code>, we use CIDR notation: <code>/24</code>. This means the first 24 bits of the IP address belong to the network, and the remaining 8 bits belong to the hosts.</p>
 <p><strong>Practical Subnetting Example:</strong>
-Given the network <code>192.168.1.0/24</code>:
-- <strong>Network Address:</strong> <code>192.168.1.0</code> (The name of the network, cannot be assigned to a device).
-- <strong>Usable Host Range:</strong> <code>192.168.1.1</code> to <code>192.168.1.254</code> (IPs you can give to laptops, servers, etc.).
-- <strong>Broadcast Address:</strong> <code>192.168.1.255</code> (Used to send a message to ALL devices on this subnet).
-- <strong>Total IPs:</strong> 256. <strong>Usable IPs:</strong> 254 (Total - 2).</p>
+Given the network <code>192.168.1.0/24</code>:</p>
+<ul>
+<li><strong>Network Address:</strong> <code>192.168.1.0</code> (The name of the network, cannot be assigned to a device).</li>
+<li><strong>Usable Host Range:</strong> <code>192.168.1.1</code> to <code>192.168.1.254</code> (IPs you can give to laptops, servers, etc.).</li>
+<li><strong>Broadcast Address:</strong> <code>192.168.1.255</code> (Used to send a message to ALL devices on this subnet).</li>
+<li><strong>Total IPs:</strong> 256. <strong>Usable IPs:</strong> 254 (Total - 2).</li>
+</ul>
 <blockquote>
 <p><strong>Module 3 Key Takeaways:</strong> Subnetting is the mathematical foundation of cloud networking. You must understand CIDR notation to design VPCs and subnets in AWS, Azure, or GCP.</p>
 </blockquote>
