@@ -101,6 +101,7 @@ Multiple containers run on the same machine and share the host's Operating Syste
 ### Container Networking Basics
 
 By default, Docker containers on the same host can talk to each other using an internal software bridge network. However, to access them from the outside, you must map a port on the host machine to a port on the container.
+
 * *Example:* Map host port `8080` to container port `80`. When traffic hits `http://host_ip:8080`, Docker routes it into the container on port `80`.
 
 > **Module 10 Key Takeaways:** VMs virtualize hardware (heavy). Containers virtualize the OS (lightweight). Containers ensure that an application runs exactly the same on a developer's laptop as it does in production.
