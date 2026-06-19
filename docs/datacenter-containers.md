@@ -120,6 +120,8 @@ When you have 5 containers, Docker is fine. When you have 5,000 containers sprea
 * **Worker Nodes:** The servers that actually run the applications.
 * **Pod:** The smallest deployable unit in Kubernetes. A Pod contains one or more containers that share the same IP address and storage.
 
+![Alt text](assets/images/k8_architecture.png)
+
 ### The Kubernetes Networking Model
 
 Kubernetes has fundamental networking rules:
