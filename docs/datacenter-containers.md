@@ -58,6 +58,7 @@ In a DC, everything must have a backup.
 In the past, one physical server ran one operating system and one application. This was highly inefficient, as the server's CPU and RAM sat idle most of the time.
 
 ### Hypervisors and Virtual Machines
+
 **Virtualization** uses software to simulate hardware functionality and create a virtual computer system.
 A **Hypervisor** is the software that creates and runs Virtual Machines (VMs). It carves out fractions of the physical server's CPU, RAM, and Storage, and assigns them to isolated VMs. Each VM runs its own full Operating System (Guest OS).
 
@@ -65,6 +66,7 @@ A **Hypervisor** is the software that creates and runs Virtual Machines (VMs). I
 * **Type 2 Hypervisor (Hosted):** Installs on top of a normal OS like Windows or macOS. (Examples: VirtualBox, VMware Workstation).
 
 ### Virtual Networking
+
 When you have 10 VMs running inside one physical server, how do they talk to the network?
 
 The hypervisor creates a **Virtual Switch (vSwitch)** inside software. 
@@ -82,7 +84,9 @@ The hypervisor creates a **Virtual Switch (vSwitch)** inside software.
 Virtual Machines are great, but they are heavy. Every VM requires a full Operating System (e.g., 20GB of disk space and 2GB of RAM just to run Windows or Linux before your app even starts). 
 
 ### Container Fundamentals
+
 Containers abstract the *Operating System*, not the hardware. 
+
 Multiple containers run on the same machine and share the host's Operating System kernel. They are incredibly lightweight (megabytes instead of gigabytes) and boot up in milliseconds.
 
 ### Docker Architecture
