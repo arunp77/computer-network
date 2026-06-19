@@ -30,14 +30,14 @@ Networks are categorized by their physical size and geographic reach:
 ### Client-Server vs. Peer-to-Peer Architecture
 How do devices communicate on these networks? There are two primary models:
 
-1. **Client-Server Architecture:**
+#### 1. **Client-Server Architecture:**
 
 - **Server:** A powerful, centralized machine that provides resources or services (e.g., a web server hosting a website).
 - **Client:** A device (like your laptop or phone) that requests services from the server.
    
    **Analogy:** Ordering food at a restaurant. You are the client requesting food; the kitchen is the server fulfilling the request.
 
-2. **Peer-to-Peer (P2P) Architecture:**
+#### 2. **Peer-to-Peer (P2P) Architecture:**
 
 - Every device on the network is equal (a "peer"). They can both request and provide resources. 
    
