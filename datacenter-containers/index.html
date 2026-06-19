@@ -1614,47 +1614,39 @@
 <h3 id="data-center-fundamentals">Data Center Fundamentals<a class="headerlink" href="#data-center-fundamentals" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>Servers:</strong> High-powered computers mounted in metal racks. They don't have monitors or keyboards; they are managed remotely.</li>
-<li><strong>Storage Systems:</strong> </li>
-<li><strong>DAS (Direct Attached Storage):</strong> Hard drives inside the server itself.</li>
+<li>
+<p><strong>Storage Systems:</strong> </p>
+</li>
+<li>
+<p><strong>DAS (Direct Attached Storage):</strong> Hard drives inside the server itself.</p>
+</li>
 <li><strong>NAS (Network Attached Storage):</strong> File-level storage accessible over the network.</li>
 <li><strong>SAN (Storage Area Network):</strong> High-speed, block-level network dedicated purely to storage (often using Fibre Channel or iSCSI). It makes remote storage appear as if it were a local hard drive to the server.</li>
 </ul>
 <h3 id="traditional-3-tier-architecture">Traditional 3-Tier Architecture<a class="headerlink" href="#traditional-3-tier-architecture" title="Permanent link">&para;</a></h3>
-<p>Historically, DC networks were built in a 3-Tier (Hierarchical) model:
-1. <strong>Core Layer:</strong> The extremely fast backbone of the network. Connects to the internet.
-2. <strong>Aggregation (Distribution) Layer:</strong> Aggregates traffic from the access layer. Applies policies, routing, and firewall rules.
-3. <strong>Access Layer:</strong> The Top-of-Rack (ToR) switches that the physical servers directly plug into.</p>
+<p>Historically, DC networks were built in a 3-Tier (Hierarchical) model:</p>
+<ol>
+<li><strong>Core Layer:</strong> The extremely fast backbone of the network. Connects to the internet.</li>
+<li><strong>Aggregation (Distribution) Layer:</strong> Aggregates traffic from the access layer. Applies policies, routing, and firewall rules.</li>
+<li><strong>Access Layer:</strong> The Top-of-Rack (ToR) switches that the physical servers directly plug into.</li>
+</ol>
 <p><em>Drawback:</em> This architecture is great for "North-South" traffic (user to server), but terrible for "East-West" traffic (server talking to another server), which is what modern applications do heavily.</p>
 <h3 id="modern-spine-leaf-architecture">Modern Spine-Leaf Architecture<a class="headerlink" href="#modern-spine-leaf-architecture" title="Permanent link">&para;</a></h3>
 <p>To solve the East-West traffic problem, modern DCs use the <strong>Spine-Leaf</strong> architecture.</p>
-<div class="highlight"><pre><span></span><code>graph TD
-    subgraph Spine Layer
-    S1[Spine Switch 1]
-    S2[Spine Switch 2]
-    end
-
-    subgraph Leaf Layer
-    L1[Leaf Switch 1]
-    L2[Leaf Switch 2]
-    L3[Leaf Switch 3]
-    end
-
-    S1 --- L1
-    S1 --- L2
-    S1 --- L3
-    S2 --- L1
-    S2 --- L2
-    S2 --- L3
-
-    L1 --- Server1
-    L2 --- Server2
-    L3 --- Server3
-</code></pre></div>
+<p><img alt="Alt txt" src="images/spine-leaf.png" /></p>
 <ul>
-<li><strong>Rules of Spine-Leaf:</strong></li>
-<li>Every leaf connects to every spine.</li>
-<li>Spines never connect to other spines. Leaves never connect to other leaves.</li>
-<li><strong>Benefit:</strong> Every server is exactly the same distance away from every other server (always exactly 3 hops: Leaf -&gt; Spine -&gt; Leaf). This ensures highly predictable latency and massive bandwidth for East-West traffic.</li>
+<li>
+<p><strong>Rules of Spine-Leaf:</strong></p>
+</li>
+<li>
+<p>Every leaf connects to every spine.</p>
+</li>
+<li>
+<p>Spines never connect to other spines. Leaves never connect to other leaves.</p>
+</li>
+<li>
+<p><strong>Benefit:</strong> Every server is exactly the same distance away from every other server (always exactly 3 hops: Leaf -&gt; Spine -&gt; Leaf). This ensures highly predictable latency and massive bandwidth for East-West traffic.</p>
+</li>
 </ul>
 <h3 id="redundancy-and-high-availability">Redundancy and High Availability<a class="headerlink" href="#redundancy-and-high-availability" title="Permanent link">&para;</a></h3>
 <p>In a DC, everything must have a backup.
