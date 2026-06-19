@@ -112,6 +112,8 @@ By default, Docker containers on the same host can talk to each other using an i
 
 When you have 5 containers, Docker is fine. When you have 5,000 containers spread across 100 servers, you need an orchestrator. **Kubernetes (K8s)** automates the deployment, scaling, and management of containerized applications.
 
+![Alt text](assets/images/kubernetee1.png)
+
 ### Kubernetes Architecture
 
 * **Control Plane (Master Node):** The brain. Makes global decisions about the cluster (scheduling, detecting node failures).
