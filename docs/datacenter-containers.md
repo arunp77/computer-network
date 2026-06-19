@@ -9,14 +9,18 @@ This section transitions from physical hardware to the abstractions that power m
 A Data Center (DC) is a facility that houses massive amounts of IT infrastructure. Cloud providers like AWS and Azure are essentially just renting you space and compute in their hyper-scale data centers.
 
 ### Data Center Fundamentals
+
 * **Servers:** High-powered computers mounted in metal racks. They don't have monitors or keyboards; they are managed remotely.
 * **Storage Systems:** 
+
   * **DAS (Direct Attached Storage):** Hard drives inside the server itself.
   * **NAS (Network Attached Storage):** File-level storage accessible over the network.
   * **SAN (Storage Area Network):** High-speed, block-level network dedicated purely to storage (often using Fibre Channel or iSCSI). It makes remote storage appear as if it were a local hard drive to the server.
 
 ### Traditional 3-Tier Architecture
+
 Historically, DC networks were built in a 3-Tier (Hierarchical) model:
+
 1. **Core Layer:** The extremely fast backbone of the network. Connects to the internet.
 2. **Aggregation (Distribution) Layer:** Aggregates traffic from the access layer. Applies policies, routing, and firewall rules.
 3. **Access Layer:** The Top-of-Rack (ToR) switches that the physical servers directly plug into.
@@ -24,36 +28,16 @@ Historically, DC networks were built in a 3-Tier (Hierarchical) model:
 *Drawback:* This architecture is great for "North-South" traffic (user to server), but terrible for "East-West" traffic (server talking to another server), which is what modern applications do heavily.
 
 ### Modern Spine-Leaf Architecture
+
 To solve the East-West traffic problem, modern DCs use the **Spine-Leaf** architecture.
 
-```mermaid
-graph TD
-    subgraph Spine Layer
-    S1[Spine Switch 1]
-    S2[Spine Switch 2]
-    end
-
-    subgraph Leaf Layer
-    L1[Leaf Switch 1]
-    L2[Leaf Switch 2]
-    L3[Leaf Switch 3]
-    end
-
-    S1 --- L1
-    S1 --- L2
-    S1 --- L3
-    S2 --- L1
-    S2 --- L2
-    S2 --- L3
-
-    L1 --- Server1
-    L2 --- Server2
-    L3 --- Server3
-```
+![Alt txt](images/spine-leaf.png)
 
 * **Rules of Spine-Leaf:**
+
   1. Every leaf connects to every spine.
   2. Spines never connect to other spines. Leaves never connect to other leaves.
+
 * **Benefit:** Every server is exactly the same distance away from every other server (always exactly 3 hops: Leaf -> Spine -> Leaf). This ensures highly predictable latency and massive bandwidth for East-West traffic.
 
 ### Redundancy and High Availability
