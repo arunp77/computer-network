@@ -1649,11 +1649,13 @@
 </li>
 </ul>
 <h3 id="redundancy-and-high-availability">Redundancy and High Availability<a class="headerlink" href="#redundancy-and-high-availability" title="Permanent link">&para;</a></h3>
-<p>In a DC, everything must have a backup.
-* Dual power supplies.
-* Dual network cards (NICs) in servers bonded together (LACP).
-* Dual Top-of-Rack switches.
-* Redundant Internet paths (BGP multi-homing).</p>
+<p>In a DC, everything must have a backup.</p>
+<ul>
+<li>Dual power supplies.</li>
+<li>Dual network cards (NICs) in servers bonded together (LACP).</li>
+<li>Dual Top-of-Rack switches.</li>
+<li>Redundant Internet paths (BGP multi-homing).</li>
+</ul>
 <blockquote>
 <p><strong>Module 8 Key Takeaways:</strong> Data Centers have shifted from 3-Tier designs to Spine-Leaf architectures to support the massive amount of server-to-server (East-West) traffic required by modern distributed applications.</p>
 </blockquote>
@@ -1668,11 +1670,13 @@ A <strong>Hypervisor</strong> is the software that creates and runs Virtual Mach
 <li><strong>Type 2 Hypervisor (Hosted):</strong> Installs on top of a normal OS like Windows or macOS. (Examples: VirtualBox, VMware Workstation).</li>
 </ul>
 <h3 id="virtual-networking">Virtual Networking<a class="headerlink" href="#virtual-networking" title="Permanent link">&para;</a></h3>
-<p>When you have 10 VMs running inside one physical server, how do they talk to the network?
-The hypervisor creates a <strong>Virtual Switch (vSwitch)</strong> inside software. 
-* The VMs connect their "virtual network cards (vNICs)" to the vSwitch.
-* The vSwitch connects to the physical server's physical network card (pNIC).
-* The pNIC connects to the physical Top-of-Rack switch.</p>
+<p>When you have 10 VMs running inside one physical server, how do they talk to the network?</p>
+<p>The hypervisor creates a <strong>Virtual Switch (vSwitch)</strong> inside software. </p>
+<ul>
+<li>The VMs connect their "virtual network cards (vNICs)" to the vSwitch.</li>
+<li>The vSwitch connects to the physical server's physical network card (pNIC).</li>
+<li>The pNIC connects to the physical Top-of-Rack switch.</li>
+</ul>
 <blockquote>
 <p><strong>Module 9 Key Takeaways:</strong> Virtualization abstracted the hardware. A Virtual Machine acts exactly like a physical computer, but it's just a set of files managed by a Hypervisor.</p>
 </blockquote>
