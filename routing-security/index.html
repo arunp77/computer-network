@@ -1601,16 +1601,28 @@ Instead of every user worldwide pulling an image from a single server in New Yor
 </ul>
 <h3 id="routing-finding-the-best-path">Routing: Finding the Best Path<a class="headerlink" href="#routing-finding-the-best-path" title="Permanent link">&para;</a></h3>
 <p>Routing is how a router decides where to send a packet next. It maintains a <strong>Routing Table</strong>—a map of network destinations and the "next hop" to get there.</p>
-<p><strong>Static vs. Dynamic Routing:</strong>
-* <strong>Static Routing:</strong> A human manually types the routes into the router. Secure and uses no CPU overhead, but terrible for large networks because if a link goes down, the router doesn't automatically adapt.
-* <strong>Dynamic Routing:</strong> Routers run protocols to talk to each other, automatically sharing information about connected networks. If a link goes down, they automatically calculate a new path.</p>
+<p><strong>Static vs. Dynamic Routing:</strong></p>
+<ul>
+<li><strong>Static Routing:</strong> A human manually types the routes into the router. Secure and uses no CPU overhead, but terrible for large networks because if a link goes down, the router doesn't automatically adapt.</li>
+<li><strong>Dynamic Routing:</strong> Routers run protocols to talk to each other, automatically sharing information about connected networks. If a link goes down, they automatically calculate a new path.</li>
+</ul>
 <h3 id="dynamic-routing-protocols">Dynamic Routing Protocols<a class="headerlink" href="#dynamic-routing-protocols" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>IGP (Interior Gateway Protocol):</strong> Used <em>inside</em> an organization's network.</li>
-<li><strong>RIP (Routing Information Protocol):</strong> Old, uses "hop count" (number of routers) to find the best path.</li>
-<li><strong>OSPF (Open Shortest Path First):</strong> Modern and complex. Uses the "cost" (bandwidth/speed) of links to mathematically calculate the fastest path using Dijkstra's algorithm.</li>
-<li><strong>EGP (Exterior Gateway Protocol):</strong> Used to route <em>between</em> different organizations.</li>
-<li><strong>BGP (Border Gateway Protocol):</strong> The protocol of the Internet. It connects different ISPs and massive corporate networks (Autonomous Systems). BGP makes routing decisions based on paths, network policies, and rules configured by network administrators.</li>
+<li>
+<p><strong>IGP (Interior Gateway Protocol):</strong> Used <em>inside</em> an organization's network.</p>
+</li>
+<li>
+<p><strong>RIP (Routing Information Protocol):</strong> Old, uses "hop count" (number of routers) to find the best path.</p>
+</li>
+<li>
+<p><strong>OSPF (Open Shortest Path First):</strong> Modern and complex. Uses the "cost" (bandwidth/speed) of links to mathematically calculate the fastest path using Dijkstra's algorithm.</p>
+</li>
+<li>
+<p><strong>EGP (Exterior Gateway Protocol):</strong> Used to route <em>between</em> different organizations.</p>
+</li>
+<li>
+<p><strong>BGP (Border Gateway Protocol):</strong> The protocol of the Internet. It connects different ISPs and massive corporate networks (Autonomous Systems). BGP makes routing decisions based on paths, network policies, and rules configured by network administrators.</p>
+</li>
 </ul>
 <blockquote>
 <p><strong>Module 6 Key Takeaways:</strong> Switching happens at Layer 2 (MAC addresses, VLANs). Routing happens at Layer 3 (IP addresses, OSPF, BGP). Segmentation via VLANs is a fundamental security and performance practice.</p>
@@ -1619,27 +1631,35 @@ Instead of every user worldwide pulling an image from a single server in New Yor
 <h2 id="module-7-network-security">MODULE 7: NETWORK SECURITY<a class="headerlink" href="#module-7-network-security" title="Permanent link">&para;</a></h2>
 <p>Network security is the practice of preventing and protecting against unauthorized intrusion into corporate networks.</p>
 <h3 id="firewalls-and-network-segmentation">Firewalls and Network Segmentation<a class="headerlink" href="#firewalls-and-network-segmentation" title="Permanent link">&para;</a></h3>
-<p>A firewall sits at the boundary of a network and filters traffic based on rules.
-* <strong>Stateless Firewall:</strong> Looks at each packet individually. Fast but easily fooled.
-* <strong>Stateful Firewall:</strong> Remembers the "state" of the connection. If you initiate a connection from inside to the outside, it automatically allows the returning traffic.
-* <strong>Next-Generation Firewall (NGFW):</strong> Can look deep into Layer 7 (Application layer) to block specific apps (e.g., allow Facebook but block Facebook Games) and includes built-in Intrusion Prevention (IPS).</p>
+<p>A firewall sits at the boundary of a network and filters traffic based on rules.</p>
+<ul>
+<li><strong>Stateless Firewall:</strong> Looks at each packet individually. Fast but easily fooled.</li>
+<li><strong>Stateful Firewall:</strong> Remembers the "state" of the connection. If you initiate a connection from inside to the outside, it automatically allows the returning traffic.</li>
+<li><strong>Next-Generation Firewall (NGFW):</strong> Can look deep into Layer 7 (Application layer) to block specific apps (e.g., allow Facebook but block Facebook Games) and includes built-in Intrusion Prevention (IPS).</li>
+</ul>
 <h3 id="vpns-virtual-private-networks">VPNs (Virtual Private Networks)<a class="headerlink" href="#vpns-virtual-private-networks" title="Permanent link">&para;</a></h3>
-<p>A VPN creates a secure, encrypted "tunnel" over a public network (like the Internet).
-* <strong>Site-to-Site VPN:</strong> Connects two physical office buildings together securely over the internet.
-* <strong>Remote Access VPN:</strong> Connects a single remote worker (from a coffee shop) securely to the corporate network.</p>
+<p>A VPN creates a secure, encrypted "tunnel" over a public network (like the Internet).</p>
+<ul>
+<li><strong>Site-to-Site VPN:</strong> Connects two physical office buildings together securely over the internet.</li>
+<li><strong>Remote Access VPN:</strong> Connects a single remote worker (from a coffee shop) securely to the corporate network.</li>
+</ul>
 <h3 id="ssltls-pki-and-certificates">SSL/TLS, PKI, and Certificates<a class="headerlink" href="#ssltls-pki-and-certificates" title="Permanent link">&para;</a></h3>
-<p>How do you know <code>google.com</code> is actually Google and not an attacker?
-* <strong>SSL/TLS:</strong> Protocols that encrypt data in transit (the "S" in HTTPS).
-* <strong>PKI (Public Key Infrastructure):</strong> The system of digital certificates and Certificate Authorities (CAs) that verify identities.
-* <strong>Certificates:</strong> A digital passport. A trusted third party (the CA) mathematically signs Google's public key, proving they own the domain. </p>
+<p>How do you know <code>google.com</code> is actually Google and not an attacker?</p>
+<ul>
+<li><strong>SSL/TLS:</strong> Protocols that encrypt data in transit (the "S" in HTTPS).</li>
+<li><strong>PKI (Public Key Infrastructure):</strong> The system of digital certificates and Certificate Authorities (CAs) that verify identities.</li>
+<li><strong>Certificates:</strong> A digital passport. A trusted third party (the CA) mathematically signs Google's public key, proving they own the domain. </li>
+</ul>
 <h3 id="zero-trust-networking">Zero Trust Networking<a class="headerlink" href="#zero-trust-networking" title="Permanent link">&para;</a></h3>
-<p>Historically, networks used a "Castle and Moat" model: heavily defend the perimeter (firewall), but once you are inside the network, you are trusted. 
-<strong>Zero Trust</strong> changes this. The philosophy is "Never Trust, Always Verify." 
-Every user, device, and application is treated as hostile by default, regardless of whether they are on the corporate LAN or at home. Access is granted based on identity, device health, and strict least-privilege policies.</p>
+<p>Historically, networks used a "Castle and Moat" model: heavily defend the perimeter (firewall), but once you are inside the network, you are trusted.</p>
+<p><strong>Zero Trust</strong> changes this. The philosophy is "Never Trust, Always Verify." </p>
+<p>Every user, device, and application is treated as hostile by default, regardless of whether they are on the corporate LAN or at home. Access is granted based on identity, device health, and strict least-privilege policies.</p>
 <h3 id="identity-and-access-management-iam">Identity and Access Management (IAM)<a class="headerlink" href="#identity-and-access-management-iam" title="Permanent link">&para;</a></h3>
-<p>IAM ensures the right people have the right access to the right resources. It involves:
-* <strong>Authentication:</strong> Who are you? (Passwords, Multi-Factor Authentication/MFA, Biometrics).
-* <strong>Authorization:</strong> What are you allowed to do? (Role-Based Access Control/RBAC).</p>
+<p>IAM ensures the right people have the right access to the right resources. It involves:</p>
+<ul>
+<li><strong>Authentication:</strong> Who are you? (Passwords, Multi-Factor Authentication/MFA, Biometrics).</li>
+<li><strong>Authorization:</strong> What are you allowed to do? (Role-Based Access Control/RBAC).</li>
+</ul>
 <h3 id="common-attack-vectors">Common Attack Vectors<a class="headerlink" href="#common-attack-vectors" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>DDoS (Distributed Denial of Service):</strong> Overwhelming a server or network with fake traffic so legitimate users can't access it.</li>
