@@ -1683,11 +1683,17 @@ The hypervisor creates a <strong>Virtual Switch (vSwitch)</strong> inside softwa
 <p>Containers abstract the <em>Operating System</em>, not the hardware. 
 Multiple containers run on the same machine and share the host's Operating System kernel. They are incredibly lightweight (megabytes instead of gigabytes) and boot up in milliseconds.</p>
 <h3 id="docker-architecture">Docker Architecture<a class="headerlink" href="#docker-architecture" title="Permanent link">&para;</a></h3>
-<p><strong>Docker</strong> popularized containerization. 
-* <strong>Dockerfile:</strong> A script containing instructions on how to build a container image.
-* <strong>Image:</strong> A read-only template with the application and all its dependencies.
-* <strong>Container:</strong> A running instance of an image.
-* <strong>Registry:</strong> A place to store and share images (e.g., Docker Hub, AWS ECR).</p>
+<p><strong>Docker</strong> popularized containerization. </p>
+<ul>
+<li><strong>Dockerfile:</strong> A script containing instructions on how to build a container image.</li>
+<li><strong>Image:</strong> A read-only template with the application and all its dependencies.</li>
+<li><strong>Container:</strong> A running instance of an image.</li>
+<li><strong>Registry:</strong> A place to store and share images (e.g., Docker Hub, AWS ECR).</li>
+</ul>
+<p><strong>Key Point</strong>: Containers are isolated from each other at the process level, but they share the host OS kernel. This is why containers are "lightweight" compared to VMs, but also why they are less isolated than VMs. </p>
+<blockquote>
+<p><a href="https://learndocker.online/courses/">Best Learning platfrom to learn Docker technology from scratch click here</a>.</p>
+</blockquote>
 <h3 id="container-networking-basics">Container Networking Basics<a class="headerlink" href="#container-networking-basics" title="Permanent link">&para;</a></h3>
 <p>By default, Docker containers on the same host can talk to each other using an internal software bridge network. However, to access them from the outside, you must map a port on the host machine to a port on the container.
 * <em>Example:</em> Map host port <code>8080</code> to container port <code>80</code>. When traffic hits <code>http://host_ip:8080</code>, Docker routes it into the container on port <code>80</code>.</p>
