@@ -41,7 +41,9 @@ To solve the East-West traffic problem, modern DCs use the **Spine-Leaf** archit
 * **Benefit:** Every server is exactly the same distance away from every other server (always exactly 3 hops: Leaf -> Spine -> Leaf). This ensures highly predictable latency and massive bandwidth for East-West traffic.
 
 ### Redundancy and High Availability
+
 In a DC, everything must have a backup.
+
 * Dual power supplies.
 * Dual network cards (NICs) in servers bonded together (LACP).
 * Dual Top-of-Rack switches.
@@ -64,7 +66,9 @@ A **Hypervisor** is the software that creates and runs Virtual Machines (VMs). I
 
 ### Virtual Networking
 When you have 10 VMs running inside one physical server, how do they talk to the network?
+
 The hypervisor creates a **Virtual Switch (vSwitch)** inside software. 
+
 * The VMs connect their "virtual network cards (vNICs)" to the vSwitch.
 * The vSwitch connects to the physical server's physical network card (pNIC).
 * The pNIC connects to the physical Top-of-Rack switch.
@@ -95,6 +99,7 @@ Multiple containers run on the same machine and share the host's Operating Syste
 > [Best Learning platfrom to learn Docker technology from scratch click here](https://learndocker.online/courses/).
 
 ### Container Networking Basics
+
 By default, Docker containers on the same host can talk to each other using an internal software bridge network. However, to access them from the outside, you must map a port on the host machine to a port on the container.
 * *Example:* Map host port `8080` to container port `80`. When traffic hits `http://host_ip:8080`, Docker routes it into the container on port `80`.
 
