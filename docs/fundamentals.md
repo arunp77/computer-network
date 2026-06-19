@@ -172,7 +172,8 @@ Not routable on the Internet. Used inside local networks (LANs).
 ### NAT and PAT
 If private IPs aren't routable on the internet, how do devices in your house access Google? 
 
-**NAT (Network Address Translation)**. Your home router takes the internal private IP address of your laptop and translates it to the single public IP address assigned to your house by your ISP before sending the packet to the Internet. PAT (Port Address Translation) allows multiple devices to share that single public IP by using different port numbers.
+- **NAT (Network Address Translation)**. Your home router takes the internal private IP address of your laptop and translates it to the single public IP address assigned to your house by your ISP before sending the packet to the Internet. 
+- **PAT (Port Address Translation)** allows multiple devices to share that single public IP by using different port numbers.
 
 ### DHCP (Dynamic Host Configuration Protocol)
 Assigning IP addresses manually to every device is tedious. DHCP is a protocol that automatically assigns IP addresses, subnet masks, default gateways, and DNS servers to devices when they join a network.

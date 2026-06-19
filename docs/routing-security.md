@@ -11,16 +11,7 @@ Computers communicate using IP addresses (e.g., `142.250.190.46`), but humans re
 
 DNS is a globally distributed, hierarchical database.
 
-```mermaid
-graph TD
-    Root[.] --> Com[.com]
-    Root --> Org[.org]
-    Root --> Net[.net]
-    Com --> Google[google.com]
-    Com --> Amazon[amazon.com]
-    Google --> Mail[mail.google.com]
-    Google --> WWW[www.google.com]
-```
+![alt text](assets/images/dns_architecture.png)
 
 ### Recursive vs. Authoritative DNS
 * **Recursive Resolver:** The middleman. When you type `google.com`, your laptop asks the Recursive Resolver (usually provided by your ISP or a public one like `8.8.8.8`). If it doesn't know the IP, it recursively hunts down the answer by querying the Root, TLD, and Authoritative servers.
