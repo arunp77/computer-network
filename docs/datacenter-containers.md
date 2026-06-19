@@ -82,11 +82,17 @@ Containers abstract the *Operating System*, not the hardware.
 Multiple containers run on the same machine and share the host's Operating System kernel. They are incredibly lightweight (megabytes instead of gigabytes) and boot up in milliseconds.
 
 ### Docker Architecture
+
 **Docker** popularized containerization. 
+
 * **Dockerfile:** A script containing instructions on how to build a container image.
 * **Image:** A read-only template with the application and all its dependencies.
 * **Container:** A running instance of an image.
 * **Registry:** A place to store and share images (e.g., Docker Hub, AWS ECR).
+
+**Key Point**: Containers are isolated from each other at the process level, but they share the host OS kernel. This is why containers are "lightweight" compared to VMs, but also why they are less isolated than VMs. 
+
+> [Best Learning platfrom to learn Docker technology from scratch click here](https://learndocker.online/courses/).
 
 ### Container Networking Basics
 By default, Docker containers on the same host can talk to each other using an internal software bridge network. However, to access them from the outside, you must map a port on the host machine to a port on the container.
