@@ -1699,8 +1699,10 @@ Multiple containers run on the same machine and share the host's Operating Syste
 <p><a href="https://learndocker.online/courses/">Best Learning platfrom to learn Docker technology from scratch click here</a>.</p>
 </blockquote>
 <h3 id="container-networking-basics">Container Networking Basics<a class="headerlink" href="#container-networking-basics" title="Permanent link">&para;</a></h3>
-<p>By default, Docker containers on the same host can talk to each other using an internal software bridge network. However, to access them from the outside, you must map a port on the host machine to a port on the container.
-* <em>Example:</em> Map host port <code>8080</code> to container port <code>80</code>. When traffic hits <code>http://host_ip:8080</code>, Docker routes it into the container on port <code>80</code>.</p>
+<p>By default, Docker containers on the same host can talk to each other using an internal software bridge network. However, to access them from the outside, you must map a port on the host machine to a port on the container.</p>
+<ul>
+<li><em>Example:</em> Map host port <code>8080</code> to container port <code>80</code>. When traffic hits <code>http://host_ip:8080</code>, Docker routes it into the container on port <code>80</code>.</li>
+</ul>
 <blockquote>
 <p><strong>Module 10 Key Takeaways:</strong> VMs virtualize hardware (heavy). Containers virtualize the OS (lightweight). Containers ensure that an application runs exactly the same on a developer's laptop as it does in production.</p>
 </blockquote>
