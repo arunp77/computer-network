@@ -1710,25 +1710,29 @@ Multiple containers run on the same machine and share the host's Operating Syste
 <li><strong>Pod:</strong> The smallest deployable unit in Kubernetes. A Pod contains one or more containers that share the same IP address and storage.</li>
 </ul>
 <h3 id="the-kubernetes-networking-model">The Kubernetes Networking Model<a class="headerlink" href="#the-kubernetes-networking-model" title="Permanent link">&para;</a></h3>
-<p>Kubernetes has fundamental networking rules:
-1. Every Pod gets its own unique IP address.
-2. All Pods can communicate with all other Pods without NAT.
-3. Nodes can communicate with all Pods without NAT.</p>
+<p>Kubernetes has fundamental networking rules:</p>
+<ol>
+<li>Every Pod gets its own unique IP address.</li>
+<li>All Pods can communicate with all other Pods without NAT.</li>
+<li>Nodes can communicate with all Pods without NAT.</li>
+</ol>
 <h3 id="cni-container-network-interface">CNI (Container Network Interface)<a class="headerlink" href="#cni-container-network-interface" title="Permanent link">&para;</a></h3>
 <p>Kubernetes doesn't actually implement networking itself. It relies on plugins called CNIs (like Calico, Flannel, or Cilium) to wire up the virtual networks, assign IPs to Pods, and ensure the networking rules are met.</p>
 <h3 id="services-and-load-balancing">Services and Load Balancing<a class="headerlink" href="#services-and-load-balancing" title="Permanent link">&para;</a></h3>
 <p>Pods are ephemeral—they die and are recreated constantly, and their IP addresses change every time. You cannot rely on a Pod's IP address.</p>
-<p>To solve this, Kubernetes uses <strong>Services</strong>. 
-A Service provides a stable, static IP address and DNS name that sits in front of a group of Pods. It acts as an internal Load Balancer.
-* <strong>ClusterIP:</strong> The default. The Service is only reachable from <em>inside</em> the K8s cluster.
-* <strong>NodePort:</strong> Opens a specific port on every Worker Node to allow external traffic to hit the Service.
-* <strong>LoadBalancer:</strong> Automatically provisions a cloud provider's Load Balancer (like AWS ALB) to route external internet traffic into the cluster.</p>
+<p>To solve this, Kubernetes uses <strong>Services</strong>. </p>
+<p>A Service provides a stable, static IP address and DNS name that sits in front of a group of Pods. It acts as an internal Load Balancer.</p>
+<ul>
+<li><strong>ClusterIP:</strong> The default. The Service is only reachable from <em>inside</em> the K8s cluster.</li>
+<li><strong>NodePort:</strong> Opens a specific port on every Worker Node to allow external traffic to hit the Service.</li>
+<li><strong>LoadBalancer:</strong> Automatically provisions a cloud provider's Load Balancer (like AWS ALB) to route external internet traffic into the cluster.</li>
+</ul>
 <h3 id="ingress">Ingress<a class="headerlink" href="#ingress" title="Permanent link">&para;</a></h3>
 <p>While a LoadBalancer service is great, if you have 50 web apps, creating 50 AWS Load Balancers gets extremely expensive.
 An <strong>Ingress</strong> acts as a smart router. It uses one single IP address / external Load Balancer, and routes traffic to different Services based on the HTTP URL path or hostname (e.g., <code>api.example.com</code> goes to the API service, <code>example.com/blog</code> goes to the Blog service).</p>
 <h3 id="network-policies">Network Policies<a class="headerlink" href="#network-policies" title="Permanent link">&para;</a></h3>
-<p>By default, all Pods in K8s can talk to all other Pods (Zero Trust is violated!).
-<strong>Network Policies</strong> are the firewalls of Kubernetes. They are rules that specify exactly which Pods are allowed to communicate with which other Pods.</p>
+<p>By default, all Pods in K8s can talk to all other Pods (Zero Trust is violated!).</p>
+<p><strong>Network Policies</strong> are the firewalls of Kubernetes. They are rules that specify exactly which Pods are allowed to communicate with which other Pods.</p>
 <blockquote>
 <p><strong>Module 11 Key Takeaways:</strong> Kubernetes networking is complex. Pods get IPs via CNI. Services provide stable internal load balancing for ephemeral Pods. Ingress handles HTTP routing from the outside world.</p>
 </blockquote>
