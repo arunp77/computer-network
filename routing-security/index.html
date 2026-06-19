@@ -1557,15 +1557,7 @@
 <h3 id="dns-architecture-the-phonebook-of-the-internet">DNS Architecture: The Phonebook of the Internet<a class="headerlink" href="#dns-architecture-the-phonebook-of-the-internet" title="Permanent link">&para;</a></h3>
 <p>Computers communicate using IP addresses (e.g., <code>142.250.190.46</code>), but humans remember names (e.g., <code>google.com</code>). <strong>DNS (Domain Name System)</strong> translates human-readable domain names into machine-readable IP addresses.</p>
 <p>DNS is a globally distributed, hierarchical database.</p>
-<div class="highlight"><pre><span></span><code>graph TD
-    Root[.] --&gt; Com[.com]
-    Root --&gt; Org[.org]
-    Root --&gt; Net[.net]
-    Com --&gt; Google[google.com]
-    Com --&gt; Amazon[amazon.com]
-    Google --&gt; Mail[mail.google.com]
-    Google --&gt; WWW[www.google.com]
-</code></pre></div>
+<p><img alt="alt text" src="../assets/images/dns_architecture.png" /></p>
 <h3 id="recursive-vs-authoritative-dns">Recursive vs. Authoritative DNS<a class="headerlink" href="#recursive-vs-authoritative-dns" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>Recursive Resolver:</strong> The middleman. When you type <code>google.com</code>, your laptop asks the Recursive Resolver (usually provided by your ISP or a public one like <code>8.8.8.8</code>). If it doesn't know the IP, it recursively hunts down the answer by querying the Root, TLD, and Authoritative servers.</li>

@@ -1996,7 +1996,10 @@
    - <code>192.168.0.0</code> to <code>192.168.255.255</code></p>
 <h3 id="nat-and-pat">NAT and PAT<a class="headerlink" href="#nat-and-pat" title="Permanent link">&para;</a></h3>
 <p>If private IPs aren't routable on the internet, how do devices in your house access Google? </p>
-<p><strong>NAT (Network Address Translation)</strong>. Your home router takes the internal private IP address of your laptop and translates it to the single public IP address assigned to your house by your ISP before sending the packet to the Internet. PAT (Port Address Translation) allows multiple devices to share that single public IP by using different port numbers.</p>
+<ul>
+<li><strong>NAT (Network Address Translation)</strong>. Your home router takes the internal private IP address of your laptop and translates it to the single public IP address assigned to your house by your ISP before sending the packet to the Internet. </li>
+<li><strong>PAT (Port Address Translation)</strong> allows multiple devices to share that single public IP by using different port numbers.</li>
+</ul>
 <h3 id="dhcp-dynamic-host-configuration-protocol">DHCP (Dynamic Host Configuration Protocol)<a class="headerlink" href="#dhcp-dynamic-host-configuration-protocol" title="Permanent link">&para;</a></h3>
 <p>Assigning IP addresses manually to every device is tedious. DHCP is a protocol that automatically assigns IP addresses, subnet masks, default gateways, and DNS servers to devices when they join a network.</p>
 <h3 id="subnetting-and-cidr-notation">Subnetting and CIDR Notation<a class="headerlink" href="#subnetting-and-cidr-notation" title="Permanent link">&para;</a></h3>
