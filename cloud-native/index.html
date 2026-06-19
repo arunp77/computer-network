@@ -1525,9 +1525,11 @@
 <li><strong>Multi-Cloud:</strong> Using multiple public cloud providers simultaneously (e.g., using AWS for compute and GCP for machine learning).</li>
 </ul>
 <h3 id="shared-responsibility-model">Shared Responsibility Model<a class="headerlink" href="#shared-responsibility-model" title="Permanent link">&para;</a></h3>
-<p>Security in the cloud is shared.
-* <strong>Security <em>OF</em> the Cloud (Provider):</strong> The cloud provider is responsible for physically securing the data centers, the hardware, and the hypervisor layer.
-* <strong>Security <em>IN</em> the Cloud (Customer):</strong> You are responsible for securing your OS, application code, data, and <em>network firewall configurations</em>.</p>
+<p>Security in the cloud is shared.</p>
+<ul>
+<li><strong>Security <em>OF</em> the Cloud (Provider):</strong> The cloud provider is responsible for physically securing the data centers, the hardware, and the hypervisor layer.</li>
+<li><strong>Security <em>IN</em> the Cloud (Customer):</strong> You are responsible for securing your OS, application code, data, and <em>network firewall configurations</em>.</li>
+</ul>
 <blockquote>
 <p><strong>Module 12 Key Takeaways:</strong> Cloud computing shifts CapEx (buying hardware) to OpEx (renting). Remember the Shared Responsibility model: if you leave a database open to the public internet, it is your fault, not Amazon's.</p>
 </blockquote>
@@ -1537,9 +1539,11 @@
 <h3 id="vpc-virtual-private-cloud">VPC (Virtual Private Cloud)<a class="headerlink" href="#vpc-virtual-private-cloud" title="Permanent link">&para;</a></h3>
 <p>A VPC is your own logically isolated slice of the public cloud. It is a virtual network dedicated to your cloud account. (Equivalent: AWS VPC, Azure Virtual Network (VNet), Google Cloud VPC).</p>
 <h3 id="subnets-public-vs-private">Subnets: Public vs. Private<a class="headerlink" href="#subnets-public-vs-private" title="Permanent link">&para;</a></h3>
-<p>When you create a VPC (e.g., <code>10.0.0.0/16</code>), you divide it into subnets.
-* <strong>Public Subnet:</strong> Has a direct route to the Internet. Used for Load Balancers and Bastion Hosts (Jump servers).
-* <strong>Private Subnet:</strong> Has NO direct route to the Internet. Used for Application Servers, Databases, and backend systems. This is a critical security boundary.</p>
+<p>When you create a VPC (e.g., <code>10.0.0.0/16</code>), you divide it into subnets.</p>
+<ul>
+<li><strong>Public Subnet:</strong> Has a direct route to the Internet. Used for Load Balancers and Bastion Hosts (Jump servers).</li>
+<li><strong>Private Subnet:</strong> Has NO direct route to the Internet. Used for Application Servers, Databases, and backend systems. This is a critical security boundary.</li>
+</ul>
 <h3 id="cloud-networking-components">Cloud Networking Components<a class="headerlink" href="#cloud-networking-components" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>Internet Gateway (IGW):</strong> A horizontally scaled, highly available cloud router that connects your VPC to the public internet.</li>
@@ -1556,17 +1560,7 @@
 <li><strong>VPC Peering:</strong> A direct, 1-to-1 network connection between two VPCs. (If VPC A peers with VPC B, and B peers with C, A <em>cannot</em> talk to C automatically. It is not transitive).</li>
 <li><strong>Transit Gateway (TGW):</strong> A central cloud router that connects thousands of VPCs and on-premise networks together. It solves the headache of managing hundreds of 1-to-1 peering connections using a hub-and-spoke model.</li>
 </ul>
-<div class="highlight"><pre><span></span><code>graph TD
-    subgraph Transit Gateway Hub
-    TGW((Transit Gateway))
-    end
-
-    TGW --- VPC_A
-    TGW --- VPC_B
-    TGW --- VPC_C
-    TGW --- VPN[Site-to-Site VPN]
-    VPN --- OnPrem[On-Premise Data Center]
-</code></pre></div>
+<p><img alt="Alt text" src="../assets/images/transit_gateways.png" /></p>
 <blockquote>
 <p><strong>Module 13 Key Takeaways:</strong> The golden rule of Cloud Networking architecture is putting internet-facing resources in Public Subnets and backend resources/databases in Private Subnets, using a NAT Gateway for outbound access.</p>
 </blockquote>
