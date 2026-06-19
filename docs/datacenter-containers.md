@@ -31,7 +31,7 @@ Historically, DC networks were built in a 3-Tier (Hierarchical) model:
 
 To solve the East-West traffic problem, modern DCs use the **Spine-Leaf** architecture.
 
-![Alt txt](images/spine-leaf.png)
+![Alt text](assets/images/spine_leaf.png)
 
 * **Rules of Spine-Leaf:**
 
