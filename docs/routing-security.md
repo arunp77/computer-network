@@ -39,6 +39,10 @@ Instead of every user worldwide pulling an image from a single server in New Yor
 8. Server responds with HTML.
 9. Browser renders the HTML and makes further requests for images, CSS, and JS (often from a CDN).
 
+![alt text](assets/images/browser_access.png)
+
+
+
 > **Module 5 Key Takeaways:** DNS is critical infrastructure. If DNS goes down, the internet feels broken. CDNs are essential for modern web performance by moving static assets closer to the user.
 
 ---
