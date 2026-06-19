@@ -107,34 +107,44 @@ By default, Docker containers on the same host can talk to each other using an i
 When you have 5 containers, Docker is fine. When you have 5,000 containers spread across 100 servers, you need an orchestrator. **Kubernetes (K8s)** automates the deployment, scaling, and management of containerized applications.
 
 ### Kubernetes Architecture
+
 * **Control Plane (Master Node):** The brain. Makes global decisions about the cluster (scheduling, detecting node failures).
 * **Worker Nodes:** The servers that actually run the applications.
 * **Pod:** The smallest deployable unit in Kubernetes. A Pod contains one or more containers that share the same IP address and storage.
 
 ### The Kubernetes Networking Model
+
 Kubernetes has fundamental networking rules:
+
 1. Every Pod gets its own unique IP address.
 2. All Pods can communicate with all other Pods without NAT.
 3. Nodes can communicate with all Pods without NAT.
 
 ### CNI (Container Network Interface)
+
 Kubernetes doesn't actually implement networking itself. It relies on plugins called CNIs (like Calico, Flannel, or Cilium) to wire up the virtual networks, assign IPs to Pods, and ensure the networking rules are met.
 
 ### Services and Load Balancing
+
 Pods are ephemeral—they die and are recreated constantly, and their IP addresses change every time. You cannot rely on a Pod's IP address.
 
 To solve this, Kubernetes uses **Services**. 
+
 A Service provides a stable, static IP address and DNS name that sits in front of a group of Pods. It acts as an internal Load Balancer.
+
 * **ClusterIP:** The default. The Service is only reachable from *inside* the K8s cluster.
 * **NodePort:** Opens a specific port on every Worker Node to allow external traffic to hit the Service.
 * **LoadBalancer:** Automatically provisions a cloud provider's Load Balancer (like AWS ALB) to route external internet traffic into the cluster.
 
 ### Ingress
+
 While a LoadBalancer service is great, if you have 50 web apps, creating 50 AWS Load Balancers gets extremely expensive.
 An **Ingress** acts as a smart router. It uses one single IP address / external Load Balancer, and routes traffic to different Services based on the HTTP URL path or hostname (e.g., `api.example.com` goes to the API service, `example.com/blog` goes to the Blog service).
 
 ### Network Policies
+
 By default, all Pods in K8s can talk to all other Pods (Zero Trust is violated!).
+
 **Network Policies** are the firewalls of Kubernetes. They are rules that specify exactly which Pods are allowed to communicate with which other Pods.
 
 > **Module 11 Key Takeaways:** Kubernetes networking is complex. Pods get IPs via CNI. Services provide stable internal load balancing for ephemeral Pods. Ingress handles HTTP routing from the outside world.
