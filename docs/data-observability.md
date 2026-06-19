@@ -73,48 +73,56 @@ Let's put all 16 modules together. What exactly happens when a user opens an app
 
 ### The Scenario: A User buys a shoe on `shop.example.com`
 
-1. **DNS Resolution:**
+#### Without Kubernetes
 
-   * The user's browser queries the local DNS resolver. It recursively asks the Root, `.com`, and `example.com` Authoritative Nameservers.
-   * DNS returns an IP address: `203.0.113.10` (which is the public IP of our CDN/WAF).
+![Complete Request Flow](assets/images/without_k8s.png)
 
-2. **CDN & WAF (Web Application Firewall):**
+#### With Kubernetes
 
-   * The user establishes a TCP connection and TLS handshake with the CDN edge server closest to them.
-   * The WAF inspects the HTTP request to ensure it's not a SQL Injection or Cross-Site Scripting attack.
-   * If the request is for a static image of the shoe, the CDN serves it from cache immediately. 
-   * Since this is a dynamic "Purchase" request, the CDN forwards the traffic to the Cloud Load Balancer.
+![Complete Request Flow](assets/images/with_k8s.png)
 
-3. **Cloud Perimeter & Load Balancing:**
+#### 1. **DNS Resolution:**
 
-   * Traffic hits the **Internet Gateway (IGW)** of the AWS VPC.
-   * The **Network ACL** on the Public Subnet allows the traffic.
-   * Traffic reaches the **Application Load Balancer (ALB)**.
-   * The ALB terminates the TLS connection, inspects the HTTP headers, and determines it needs to go to the Kubernetes cluster.
+* The user's browser queries the local DNS resolver. It recursively asks the Root, `.com`, and `example.com` Authoritative Nameservers.
+* DNS returns an IP address: `203.0.113.10` (which is the public IP of our CDN/WAF).
 
-4. **Kubernetes Ingress:**
+#### 2. **CDN & WAF (Web Application Firewall):**
 
-   * The ALB forwards the traffic to the **Kubernetes Ingress Controller** (running on Worker Nodes in a Private Subnet).
-   * The Ingress Controller looks at the URL path (`/purchase`) and routes it to the internal `Checkout Service`.
+* The user establishes a TCP connection and TLS handshake with the CDN edge server closest to them.
+* The WAF inspects the HTTP request to ensure it's not a SQL Injection or Cross-Site Scripting attack.
+* If the request is for a static image of the shoe, the CDN serves it from cache immediately. 
+* Since this is a dynamic "Purchase" request, the CDN forwards the traffic to the Cloud Load Balancer.
 
-5. **Microservices (Service Mesh):**
+#### 3. **Cloud Perimeter & Load Balancing:**
 
-   * The traffic enters the Service Mesh proxy sidecar of the Checkout Pod. 
-   * The Checkout Service needs to verify inventory. It makes an internal gRPC call to the `Inventory Service`. The Service Mesh handles internal DNS resolution, encrypts the traffic (mTLS), and routes it to an available Inventory Pod.
+* Traffic hits the **Internet Gateway (IGW)** of the AWS VPC.
+* The **Network ACL** on the Public Subnet allows the traffic.
+* Traffic reaches the **Application Load Balancer (ALB)**.
+* The ALB terminates the TLS connection, inspects the HTTP headers, and determines it needs to go to the Kubernetes cluster.
 
-6. **Data Processing (Kafka):**
+#### 4. **Kubernetes Ingress:**
 
-   * The Inventory Service confirms stock. The Checkout Service completes the transaction.
-   * The Checkout Service publishes an event: `"Order Placed: Order #12345"` to an internal **Apache Kafka** cluster.
+* The ALB forwards the traffic to the **Kubernetes Ingress Controller** (running on Worker Nodes in a Private Subnet).
+* The Ingress Controller looks at the URL path (`/purchase`) and routes it to the internal `Checkout Service`.
 
-7. **Database Persistence:**
+#### 5. **Microservices (Service Mesh):**
 
-   * The Checkout Service also commits the final transaction to the primary relational database (e.g., PostgreSQL).
+* The traffic enters the Service Mesh proxy sidecar of the Checkout Pod. 
+* The Checkout Service needs to verify inventory. It makes an internal gRPC call to the `Inventory Service`. The Service Mesh handles internal DNS resolution, encrypts the traffic (mTLS), and routes it to an available Inventory Pod.
 
-8. **Response:**
+#### 6. **Data Processing (Kafka):**
 
-   * An HTTP `200 OK` response travels back through the Service Mesh proxy $\rightarrow$ Ingress Controller $\rightarrow$ Application Load Balancer $\rightarrow$ CDN $\rightarrow$ User's Browser.
-   * The browser renders the "Thank you for your purchase!" page.
+* The Inventory Service confirms stock. The Checkout Service completes the transaction.
+* The Checkout Service publishes an event: `"Order Placed: Order #12345"` to an internal **Apache Kafka** cluster.
+
+#### 7. **Database Persistence:**
+
+* The Checkout Service also commits the final transaction to the primary relational database (e.g., PostgreSQL).
+
+#### 8. **Response:**
+
+* An HTTP `200 OK` response travels back through the Service Mesh proxy $\rightarrow$ Ingress Controller $\rightarrow$ Application Load Balancer $\rightarrow$ CDN $\rightarrow$ User's Browser.
+* The browser renders the "Thank you for your purchase!" page.
 
 ### Post-Request Asynchronous Flow
 
