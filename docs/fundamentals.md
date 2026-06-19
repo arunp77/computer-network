@@ -9,6 +9,8 @@ Welcome to Part 1. This section covers the foundational concepts of computer net
 ### What is a computer network?
 A computer network is simply a group of two or more interconnected computing devices that can share data and resources. Think of it like a conversation between two people; to communicate, they need a shared language, a medium (like air for sound), and a set of rules for taking turns speaking. In networking, computers use cables or wireless signals (medium) and protocols (rules) to share information.
 
+![alt text](assets/images/network_ips.png)
+
 ### Network Types (Based on Scope)
 Networks are categorized by their physical size and geographic reach:
 
